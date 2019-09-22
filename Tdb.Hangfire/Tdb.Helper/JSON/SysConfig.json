@@ -1,0 +1,21 @@
+﻿{
+  "DBConnStr": "server=127.0.0.1;database=TdbHangfire;user id=root;password=t1234567890;Allow User Variables=True",
+  "AppUrl": "http://127.0.0.1:12002",
+  "ApiUrl": {
+    "Base": "http://172.81.235.6:10001",
+    "BackupDB": "api/Mysql/Backup",
+    "UpdateAmountAccountSortWeight": "api/InOut/UpdateAmountAccountSortWeight",
+    "UpdateInTypeSortWeight": "api/InOut/UpdateInTypeSortWeight",
+    "UpdateOutTypeSortWeight": "api/InOut/UpdateOutTypeSortWeight"
+  },
+  "EmailAddr": {
+    "BackupIODBFails": "187235004@qq.com"
+  },
+  "Email": {
+    "SmtpHost": "smtp.qq.com",
+    "SmtpPort": 587,
+    "SmtpPwd": "pkbwowkwrwunbhaa",
+    "FromEmailName": "tdb",
+    "FromEmail": "187235004@qq.com"
+  }
+}

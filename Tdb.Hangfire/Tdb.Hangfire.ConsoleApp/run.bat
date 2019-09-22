@@ -1,0 +1,1 @@
+start dotnet Tdb.Hangfire.ConsoleApp.dll
