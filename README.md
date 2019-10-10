@@ -1,8 +1,15 @@
-# IOSysV4_Hangfire
+# IOSysV4_Hangfire  
 家庭收支系统V4-任务调度  
 
-系统演示地址：（尚未部署）  
-微博地址：[https://blog.csdn.net/dabintang](https://blog.csdn.net/dabintang)  
+# 系统演示   
+微博地址：[https://blog.csdn.net/dabintang](https://blog.csdn.net/dabintang/article/details/101164486)  
+
+[PC端](http://172.81.235.6:20002)  
+安卓app（尚未部署）  
+用户名：user  
+密码：password  
+
+部署方法：（后续补充）  
 
 ## V4版本的系统主要由以下几个项目组成：  
 接口项目： https://github.com/dabintang/IOSysV4_NetCore  
