@@ -14,8 +14,7 @@ pc端web：https://github.com/dabintang/IOSysV4_WebVue
 语言：asp.net core 2.2  
 主要组件：Hangfire  
 
-这项目其实就是把net core版本的Hangfire搭建起来，再添加一些周期任务。
-
 ## 简介
+这项目其实就是把net core版本的Hangfire搭建起来，再添加一些周期任务。  
 目前有以下任务，具体实现看代码。  
 ![任务](https://img-blog.csdnimg.cn/20190922172217204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RhYmludGFuZw==,size_16,color_FFFFFF,t_70)
