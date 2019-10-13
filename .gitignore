@@ -1,0 +1,10 @@
+/Tdb.Hangfire/.vs
+/Tdb.Hangfire/Tdb.DTO/obj
+/Tdb.Hangfire/Tdb.DTO/bin
+/Tdb.Hangfire/Tdb.Hangfire/obj
+/Tdb.Hangfire/Tdb.Hangfire/bin
+/Tdb.Hangfire/Tdb.Hangfire.ConsoleApp/obj
+/Tdb.Hangfire/Tdb.Hangfire.ConsoleApp/bin
+/Tdb.Hangfire/Tdb.Helper/obj
+/Tdb.Hangfire/Tdb.Helper/bin
+*.user

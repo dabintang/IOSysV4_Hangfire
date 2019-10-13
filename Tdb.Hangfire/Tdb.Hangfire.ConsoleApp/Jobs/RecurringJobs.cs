@@ -15,28 +15,6 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
     /// </summary>
     public class RecurringJobs
     {
-        #region 测试
-
-        ///// <summary>
-        ///// 测试每分钟执行一次
-        ///// </summary>
-        //[RecurringJob("* * * * *", RecurringJobId = "测试每分钟执行一次", TimeZone = "China Standard Time")]
-        //public void TestPerMinute()
-        //{
-        //    LogHelper.Info($"开始[TestPerMinute] 测试每分钟执行一次：{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
-        //}
-
-        ///// <summary>
-        ///// 测试每10秒钟执行一次（时间间隔和次数 很不准确）
-        ///// </summary>
-        //[RecurringJob("*/10 * * * * *", RecurringJobId = "测试每10秒钟执行一次", TimeZone = "China Standard Time")]
-        //public void TestPer10Second()
-        //{
-        //    LogHelper.Info($"开始[TestPerMinute] 测试每10秒钟执行一次：{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
-        //}
-
-        #endregion
-
         /// <summary>
         /// 每天凌晨3点备份收支系统数据库【[0 3 * * *]每天凌晨3点执行】/【[* * * * *]没分钟执行】
         /// </summary>
@@ -126,6 +104,43 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
             var res = client.ExecPost<ResultInfo<bool>>(SysJson.Inst.Sys.ApiUrl.UpdateOutTypeSortWeight, null, headerParams);
 
             LogHelper.Info("完成[UpdateOutTypeSortWeight] 统计支出类型排序权重");
+        }
+
+        /// <summary>
+        /// 每天半夜23点演示系统模拟收支
+        /// </summary>
+        /// <param name="context"></param>
+        [RecurringJob("0 23 * * *", RecurringJobId = "每天半夜23点演示系统模拟收支", TimeZone = "China Standard Time")]
+        public void AutoSimulatorInOut(PerformContext context)
+        {
+            LogHelper.Info("开始[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+
+            //头部参数
+            var headerParams = new Dictionary<string, string>();
+            headerParams["Authorization"] = "0";
+
+            //参数
+            var req = new { date = DateTime.Today };
+
+            //请求备份接口
+            try
+            {
+                var client = new TdbHttpClient("http://127.0.0.1:20003");
+                //var resIn = client.ExecPost<ResultInfo<bool>>("api/AutoSimulator/SimulateInCome", req, headerParams);
+                var resIn = client.Execute("api/AutoSimulator/SimulateInCome", RestSharp.Method.POST, req, headerParams);
+                //var resOut = client.ExecPost<ResultInfo<bool>>("api/AutoSimulator/SimulateOutPut", req, headerParams);
+                var resOut = client.Execute("api/AutoSimulator/SimulateOutPut", RestSharp.Method.POST, req, headerParams);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex, "异常1：[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+                if (ex.InnerException != null)
+                {
+                    LogHelper.Error(ex.InnerException, "异常2：[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+                }
+            }
+
+            LogHelper.Info("完成[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
         }
     }
 }
