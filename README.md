@@ -5,7 +5,7 @@
 微博地址：[https://blog.csdn.net/dabintang](https://blog.csdn.net/dabintang/article/details/101164486)  
 
 [PC端](http://172.81.235.6:20002)  
-安卓app（http://172.81.235.6:20001/Files/APP/Update/4.11.4/iosysv4-release.apk）  
+[安卓app](http://172.81.235.6:20001/Files/APP/Update/4.11.4/iosysv4-release.apk)  
 用户名：user  
 密码：password  
 
