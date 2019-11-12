@@ -1,8 +1,8 @@
 ﻿{
-  "DBConnStr": "server=127.0.0.1;database=TdbHangfire;user id=root;password=t1234567890;Allow User Variables=True",
-  "AppUrl": "http://127.0.0.1:12002",
+  "DBConnStr": "server=127.0.0.1;database=IOSysV4_Demo;user id=iosysv4_demo;password=iosysv4_demo;Allow User Variables=True",
+  "AppUrl": "http://127.0.0.1:20003",
   "ApiUrl": {
-    "Base": "http://172.81.235.6:10001",
+    "Base": "http://172.81.235.6:20001",
     "BackupDB": "api/Mysql/Backup",
     "UpdateAmountAccountSortWeight": "api/InOut/UpdateAmountAccountSortWeight",
     "UpdateInTypeSortWeight": "api/InOut/UpdateInTypeSortWeight",
