@@ -1,6 +1,6 @@
 ﻿{
   "DBConnStr": "server=127.0.0.1;database=IOSysV4_Demo;user id=iosysv4_demo;password=iosysv4_demo;Allow User Variables=True",
-  "AppUrl": "http://127.0.0.1:20003",
+  "AppUrl": "http://127.0.0.1:20004",
   "ApiUrl": {
     "Base": "http://172.81.235.6:20001",
     "BackupDB": "api/Mysql/Backup",
