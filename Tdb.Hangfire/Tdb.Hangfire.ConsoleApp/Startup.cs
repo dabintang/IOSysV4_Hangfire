@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Tdb.Hangfire.ConsoleApp.Filters;
 using Tdb.Hangfire.ConsoleApp.Jobs;
 using Tdb.Helper.Config;
 
@@ -18,7 +19,12 @@ namespace Tdb.Hangfire.ConsoleApp
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             //使用hangfire面板
-            app.UseHangfireDashboard();
+            //app.UseHangfireDashboard();
+            //使用hangfire面板授权
+            app.UseHangfireDashboard(
+                options: new DashboardOptions() { Authorization = new[] { 
+                    BaseDashboardAuthorizationFilter.Create(SysJson.Inst.Sys.HangfireAuth, SysJson.Inst.Sys.HangfireUrlKey) } }
+                );
         }
 
         public void ConfigureServices(IServiceCollection services)

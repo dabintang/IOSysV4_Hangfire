@@ -15,6 +15,16 @@ namespace Tdb.Helper.Config
         public string DBConnStr { get; set; }
 
         /// <summary>
+        /// 仪表盘登录用户名
+        /// </summary>
+        public string HangfireAuth { get; set; }
+
+        /// <summary>
+        /// 仪表盘登录用户参数名
+        /// </summary>
+        public string HangfireUrlKey { get; set; }
+
+        /// <summary>
         /// 自宿地址
         /// </summary>
         public string AppUrl { get; set; }

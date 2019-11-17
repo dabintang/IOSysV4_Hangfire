@@ -1,6 +1,8 @@
 ﻿{
   "DBConnStr": "server=127.0.0.1;database=TdbHangfire_Demo;user id=root;password=t1234567890;Allow User Variables=True",
   "AppUrl": "http://127.0.0.1:20004",
+  "HangfireAuth": "user",
+  "HangfireUrlKey": "auth",
   "ApiUrl": {
     "Base": "http://172.81.235.6:20001",
     "BackupDB": "api/Mysql/Backup",
