@@ -19,6 +19,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨3点备份收支系统数据库【[0 3 * * *]每天凌晨3点执行】/【[* * * * *]没分钟执行】
         /// </summary>
         /// <param name="context"></param>
+        //[RecurringJob("0 3 * * *", RecurringJobId = "每天凌晨3点备份收支系统数据库", TimeZone = "China Standard Time")]
         [RecurringJob("0 3 * * *", RecurringJobId = "每天凌晨3点备份收支系统数据库", TimeZone = "Asia/Shanghai")]
         public void BackupIOSysDB(PerformContext context)
         {
@@ -50,6 +51,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨1点统计账户排序权重
         /// </summary>
         /// <param name="context"></param>
+        //[RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计账户排序权重", TimeZone = "China Standard Time")]
         [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计账户排序权重", TimeZone = "Asia/Shanghai")]
         public void UpdateAmountAccountSortWeight(PerformContext context)
         {
@@ -70,6 +72,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨1点统计收入类型排序权重
         /// </summary>
         /// <param name="context"></param>
+        //[RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计收入类型排序权重", TimeZone = "China Standard Time")]
         [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计收入类型排序权重", TimeZone = "Asia/Shanghai")]
         public void UpdateInTypeSortWeight(PerformContext context)
         {
@@ -90,6 +93,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨1点统计支出类型排序权重
         /// </summary>
         /// <param name="context"></param>
+        //[RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计支出类型排序权重", TimeZone = "China Standard Time")]
         [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计支出类型排序权重", TimeZone = "Asia/Shanghai")]
         public void UpdateOutTypeSortWeight(PerformContext context)
         {
