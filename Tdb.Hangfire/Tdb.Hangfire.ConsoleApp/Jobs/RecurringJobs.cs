@@ -19,7 +19,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨3点备份收支系统数据库【[0 3 * * *]每天凌晨3点执行】/【[* * * * *]没分钟执行】
         /// </summary>
         /// <param name="context"></param>
-        [RecurringJob("0 3 * * *", RecurringJobId = "每天凌晨3点备份收支系统数据库", TimeZone = "China Standard Time")]
+        [RecurringJob("0 3 * * *", RecurringJobId = "每天凌晨3点备份收支系统数据库", TimeZone = "Asia/Shanghai")]
         public void BackupIOSysDB(PerformContext context)
         {
             LogHelper.Info("开始[BackupIOSysDB] 备份收支系统数据库");
@@ -50,7 +50,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨1点统计账户排序权重
         /// </summary>
         /// <param name="context"></param>
-        [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计账户排序权重", TimeZone = "China Standard Time")]
+        [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计账户排序权重", TimeZone = "Asia/Shanghai")]
         public void UpdateAmountAccountSortWeight(PerformContext context)
         {
             LogHelper.Info("开始[UpdateAmountAccountSortWeight] 统计账户排序权重");
@@ -70,7 +70,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨1点统计收入类型排序权重
         /// </summary>
         /// <param name="context"></param>
-        [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计收入类型排序权重", TimeZone = "China Standard Time")]
+        [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计收入类型排序权重", TimeZone = "Asia/Shanghai")]
         public void UpdateInTypeSortWeight(PerformContext context)
         {
             LogHelper.Info("开始[UpdateInTypeSortWeight] 统计收入类型排序权重");
@@ -90,7 +90,7 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
         /// 每天凌晨1点统计支出类型排序权重
         /// </summary>
         /// <param name="context"></param>
-        [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计支出类型排序权重", TimeZone = "China Standard Time")]
+        [RecurringJob("0 1 * * *", RecurringJobId = "每天凌晨1点统计支出类型排序权重", TimeZone = "Asia/Shanghai")]
         public void UpdateOutTypeSortWeight(PerformContext context)
         {
             LogHelper.Info("开始[UpdateOutTypeSortWeight] 统计支出类型排序权重");
@@ -106,41 +106,41 @@ namespace Tdb.Hangfire.ConsoleApp.Jobs
             LogHelper.Info("完成[UpdateOutTypeSortWeight] 统计支出类型排序权重");
         }
 
-        /// <summary>
-        /// 每天半夜23点演示系统模拟收支
-        /// </summary>
-        /// <param name="context"></param>
-        [RecurringJob("0 23 * * *", RecurringJobId = "每天半夜23点演示系统模拟收支", TimeZone = "China Standard Time")]
-        public void AutoSimulatorInOut(PerformContext context)
-        {
-            LogHelper.Info("开始[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+        ///// <summary>
+        ///// 每天半夜23点演示系统模拟收支
+        ///// </summary>
+        ///// <param name="context"></param>
+        //[RecurringJob("0 23 * * *", RecurringJobId = "每天半夜23点演示系统模拟收支", TimeZone = "Asia/Shanghai")]
+        //public void AutoSimulatorInOut(PerformContext context)
+        //{
+        //    LogHelper.Info("开始[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+            
+        //    //头部参数
+        //    var headerParams = new Dictionary<string, string>();
+        //    headerParams["Authorization"] = "0";
 
-            //头部参数
-            var headerParams = new Dictionary<string, string>();
-            headerParams["Authorization"] = "0";
+        //    //参数
+        //    var req = new { date = DateTime.Today };
 
-            //参数
-            var req = new { date = DateTime.Today };
+        //    //请求备份接口
+        //    try
+        //    {
+        //        var client = new TdbHttpClient("http://127.0.0.1:20003");
+        //        //var resIn = client.ExecPost<ResultInfo<bool>>("api/AutoSimulator/SimulateInCome", req, headerParams);
+        //        var resIn = client.Execute("api/AutoSimulator/SimulateInCome", RestSharp.Method.POST, req, headerParams);
+        //        //var resOut = client.ExecPost<ResultInfo<bool>>("api/AutoSimulator/SimulateOutPut", req, headerParams);
+        //        var resOut = client.Execute("api/AutoSimulator/SimulateOutPut", RestSharp.Method.POST, req, headerParams);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LogHelper.Error(ex, "异常1：[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+        //        if (ex.InnerException != null)
+        //        {
+        //            LogHelper.Error(ex.InnerException, "异常2：[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+        //        }
+        //    }
 
-            //请求备份接口
-            try
-            {
-                var client = new TdbHttpClient("http://127.0.0.1:20003");
-                //var resIn = client.ExecPost<ResultInfo<bool>>("api/AutoSimulator/SimulateInCome", req, headerParams);
-                var resIn = client.Execute("api/AutoSimulator/SimulateInCome", RestSharp.Method.POST, req, headerParams);
-                //var resOut = client.ExecPost<ResultInfo<bool>>("api/AutoSimulator/SimulateOutPut", req, headerParams);
-                var resOut = client.Execute("api/AutoSimulator/SimulateOutPut", RestSharp.Method.POST, req, headerParams);
-            }
-            catch (Exception ex)
-            {
-                LogHelper.Error(ex, "异常1：[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
-                if (ex.InnerException != null)
-                {
-                    LogHelper.Error(ex.InnerException, "异常2：[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
-                }
-            }
-
-            LogHelper.Info("完成[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
-        }
+        //    LogHelper.Info("完成[AutoSimulatorInOut] 每天半夜23点演示系统模拟收支");
+        //}
     }
 }
