@@ -30,6 +30,11 @@ namespace Tdb.Helper.Config
         public string AppUrl { get; set; }
 
         /// <summary>
+        /// 模拟收支接口地址
+        /// </summary>
+        public string SimulatorApiUrl { get; set; }
+
+        /// <summary>
         /// api地址配置
         /// </summary>
         public ApiUrlConfig ApiUrl { get; set; }
