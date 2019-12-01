@@ -1,6 +1,6 @@
 ﻿{
   "DBConnStr": "server=127.0.0.1;database=TdbHangfire_Demo;user id=root;password=t1234567890;Allow User Variables=True",
-  "AppUrl": "http://127.0.0.1:20004",
+  "AppUrl": "http://*:20004",
   "HangfireAuth": "user",
   "HangfireUrlKey": "auth",
   "SimulatorApiUrl": "http://127.0.0.1:20003",
